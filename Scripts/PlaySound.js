@@ -31,11 +31,11 @@ function PlayOrStopSound(ele)
     }
     else
     {
-        if(ele.hasAttribute('data-soundurl'))
+        if(ele.hasAttribute('data-surl'))
         {
             SoundObj.endFunc();
             ele.classList.add("playing");
-            SoundObj.audio.src = ele.getAttribute('data-soundurl');
+            SoundObj.audio.src = "Sviaym/"+ele.getAttribute('data-surl');
             SoundObj.audio.load();
             SoundObj.bindEle = ele;
             SoundObj.audio.play();
