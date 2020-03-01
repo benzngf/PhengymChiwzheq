@@ -19,7 +19,7 @@ var SoundObj = {
             && !this.audio.ended
             && this.audio.readyState > 2;
     }
-}
+};
 SoundObj.audio.onended = function(){SoundObj.endFunc();};
 
 function PlayOrStopSound(ele)
