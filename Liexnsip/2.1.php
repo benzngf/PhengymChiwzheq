@@ -1,6 +1,6 @@
 <div class="p-topbar"><h3>[練習2.1]</h3><h2>基調音含單母音拼詞</h2></div>
 <div style="width: 100%; height: calc(100% - 64px);">
-    <div style="position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%); text-align: center;">
+    <div style="position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%); text-align: center; width: 100%;">
         <div style="min-height: 100px;">
 <?php
 $json = 
@@ -56,7 +56,7 @@ if(isset($words[$randomIndex]->{'hint'}))
 ?>
 </div>
         <div class="smallbtn" onclick="RequestPractice('2.1.php?num=<?php echo "".($randomIndex-1); ?>');">上一個</div>
-        <div class="smallbtn" onclick="RequestPractice('2.1.php');">隨機</div>
+        <div class="smallbtn" onclick="RequestPractice('2.1.php?rand=<?php echo "".microtime(true); ?>');">隨機</div>
         <div class="smallbtn" onclick="RequestPractice('2.1.php?num=<?php echo "".($randomIndex+1); ?>');">下一個</div>
     </div>
 </div>
