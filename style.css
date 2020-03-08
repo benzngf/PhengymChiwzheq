@@ -32,6 +32,7 @@ img.txt
 {
 	text-align: center;
 }
+
 h2
 {
 	margin: 0;
@@ -67,6 +68,7 @@ table
 {
 	width: 100%;
 	overflow: auto;
+	margin-bottom: 20px;
 }
 td,th
 {
@@ -89,6 +91,20 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	margin: -1px;
 	padding: 5px;
 	display: inline-block;
+}
+.flowcell-tab
+{
+	width: 105px;
+	padding: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.flowcell-p
+{
+	display: inline-block;
+	text-indent: 0;
+	margin-left: 2em;
+	margin-right: 1em;
 }
 .section
 {
@@ -207,6 +223,90 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 	cursor: pointer;
 }
+.smallbtn
+{
+	display: inline-block;
+	padding: 6px 8px;
+	margin: 6px;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	background-color: rgb(101, 182, 72);
+	transition-duration: 0.2s;
+}
+.smallbtn:hover
+{
+	background-color: rgb(128, 206, 100);
+	transform: translateY(-2px);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+#practice
+{
+	position: fixed;
+	display: block;
+	top: calc(-100% - 30px);
+	height: 100%;
+	right: 0;
+	width: calc(100% - 380px);
+	min-width: 70%;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(250,250,250);
+	transition-duration: 0.8s;
+}
+#practice.mobile
+{
+	width: 100%;
+}
+#practice.slidein
+{
+	top: 0;
+}
+#p-endbtn
+{
+	position: absolute;
+	bottom: -10px;
+	padding: 5px;
+	padding-bottom: 15px; 
+	left: 0;
+	right: 0;
+	height: 64px;
+	border-radius: 24px 24px 0 0;
+	box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5);
+	background-color: rgb(101, 182, 72);
+	color: #FFF;
+	text-align: center;
+	transition-duration: 0.2s;
+}
+#p-endbtn:hover
+{
+	background-color: rgb(128, 206, 100);
+	bottom: 0;
+	cursor: pointer;
+}
+.p-panel
+{
+	width: 100%;
+	display: block;
+}
+.p-panel.hide
+{
+	display: none;
+}
+.p-topbar
+{
+	background-color: rgb(45, 114, 17);
+	margin: 0;
+	width: 100%;
+	min-height: 64px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+	display: block;
+	color: #FFF;
+	text-align: center;
+}
+
 #content
 {
 	height: 100%;
@@ -323,4 +423,10 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 {
 	-webkit-transform: rotate(45deg) translate(-8px, -8px);
 	transform: rotate(45deg) translate(-8px, -8px);
+}
+.chkvis
+{
+	min-height: 15em;
+	margin: 0;
+	padding: 0;
 }

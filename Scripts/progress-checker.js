@@ -1,12 +1,13 @@
 function isElementInViewport (el) {
+    var inset = 20;
     var rect = el.getBoundingClientRect();
     wh = (window.innerHeight || document.documentElement.clientHeight);
     ww = (window.innerWidth || document.documentElement.clientWidth);
-    if(rect.left > ww || rect.right < 0)
+    if(rect.left+inset > ww || rect.right-inset < 0)
     {
         return false;
     }
-    if(rect.top > wh || rect.bottom < 0)
+    if(rect.top+inset > wh || rect.bottom-inset < 0)
     {
         return false;
     }
