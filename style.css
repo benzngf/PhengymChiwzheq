@@ -383,16 +383,18 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 .soundtxt
 {
 	transition-duration: 0.1s;
-	border-bottom: 3px dashed;
-	border-bottom-color: rgba(0,0,0,0);
+	border-bottom: 2px dashed;
+	border-bottom-color: rgba(110, 110, 110,0.2);
 }
 .soundtxt:hover
 {
+	border-bottom: 3px dashed;
 	border-bottom-color: rgb(110, 110, 110);
 	cursor: pointer;
 }
 .playing
 {
+	border-bottom: 3px dashed !important;
 	border-bottom-color: rgb(255, 145, 145) !important;
 }
 #footer
@@ -429,4 +431,21 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	min-height: 15em;
 	margin: 0;
 	padding: 0;
+}
+.playabletxt::after
+{
+	background-image: url(Doo/Icon/Playing.png);
+	width: 1em;
+	height: 1em;
+	content: "";
+	position: relative;
+	display: inline-block;
+	vertical-align: bottom;
+	background-size:contain;
+	margin-left: 5px;
+}
+.playabletxt
+{
+	cursor: pointer;
+	display: inline-block;
 }

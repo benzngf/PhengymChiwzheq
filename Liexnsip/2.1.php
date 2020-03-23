@@ -39,6 +39,8 @@ $json =
     {"word":"zhopo","sound":""}
 ]'
 ;
+$soundpostfix = ".mp3";
+$soundprefix = "LS2/ls2.1_";
 $words = json_decode($json);
 $randomIndex = rand ( 0, count($words)-1);
 if(isset($_GET["num"]) && is_numeric($_GET["num"]))
@@ -47,8 +49,8 @@ if(isset($_GET["num"]) && is_numeric($_GET["num"]))
     if($randomIndex >= count($words)) $randomIndex = 0;
     if($randomIndex < 0) $randomIndex = count($words)-1;
 }
-
-echo "<h1>".$words[$randomIndex]->{'word'}."</h1>";
+echo '<audio autoplay><source src="Sviaym/'.$soundprefix.$randomIndex.$soundpostfix.'" type="audio/mpeg"></audio>';
+echo "<h1 class='soundtxt playabletxt' onclick='PlayOrStopSound(this);' data-surl='".$soundprefix.$randomIndex.$soundpostfix."'>".$words[$randomIndex]->{'word'}."</h1>";
 if(isset($words[$randomIndex]->{'hint'}))
 {
     echo "<h3>".$words[$randomIndex]->{'hint'}."</h3>";
