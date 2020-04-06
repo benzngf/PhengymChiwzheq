@@ -241,13 +241,13 @@
             </table>
         </div>
         <div style="text-align: center;">
-            <div class="practicebtn" onclick="RequestPractice('2.1.php');"><h3>練習 2.1<br>基調音含單母音拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.2.php');"><h3>練習 2.2<br>含前鼻音 V 拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.3.php');"><h3>練習 2.3<br>含複母音及單母音拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.4.php');"><h3>練習 2.4<br>含兩個複母音拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.5.php');"><h3>練習 2.5<br>含後鼻音及單母音拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.6.php');"><h3>練習 2.6<br>含兩個後鼻音拼詞</h3></div>
-            <div class="practicebtn" onclick="RequestPractice('2.7.php');"><h3>練習 2.7<br>含複母音及後鼻音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.1');"><h3>練習 2.1<br>基調音含單母音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.2');"><h3>練習 2.2<br>含前鼻音 V 拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.3');"><h3>練習 2.3<br>含複母音及單母音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.4');"><h3>練習 2.4<br>含兩個複母音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.5');"><h3>練習 2.5<br>含後鼻音及單母音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.6');"><h3>練習 2.6<br>含兩個後鼻音拼詞</h3></div>
+            <div class="practicebtn" onclick="RequestPractice('2.7');"><h3>練習 2.7<br>含複母音及後鼻音拼詞</h3></div>
         </div>
         </div>
     </div>
@@ -794,7 +794,10 @@ switchMobileMode();
 <script type="text/javascript">
 //practice
 var practiceMode = false;
-function RequestPractice(pageIndex)
+var curselected;
+var curptype = "current";
+var randomp = false;
+function RequestPractice(pageIndex, ptype, qind, ans)
 {
     if(!practiceMode)
     {
@@ -815,10 +818,59 @@ function RequestPractice(pageIndex)
             document.getElementById("practice-content").innerHTML = xmlhttp.responseText;
             document.getElementById('practice-content').classList.remove("hide");
             document.getElementById('practice-loading').classList.add("hide");
+            if(document.getElementById("questionsound"))
+            {
+                PlayOrStopSound(document.getElementById("questionsound"));
+            }
         }
     }
-    xmlhttp.open("GET", "Liexnsip/"+pageIndex, true);
-    xmlhttp.send();
+    reqUrl = "Liexnsip/index.php";
+    
+
+    if(ptype == "read")
+    {
+        curptype = ptype;
+        reqUrl = "Liexnsip/read.php";
+        randomp = false;
+    }
+    else if(ptype == "spell")
+    {
+        curptype = ptype;        
+        reqUrl = "Liexnsip/spell.php";
+        randomp = false;
+    }
+    else if(ptype == "random")
+    {
+        isread = Math.random()>0.5;
+        curptype = isread? "read":"spell";
+        reqUrl = isread? "Liexnsip/read.php":"Liexnsip/spell.php";
+        randomp = true;
+    }
+    else if(ptype == "current")
+    {
+        if(curptype == "read")
+        {
+            reqUrl = "Liexnsip/read.php";
+        }
+        else if(curptype == "spell")
+        {
+            reqUrl = "Liexnsip/spell.php";
+        }
+    }
+    
+    xmlhttp.open("POST", reqUrl);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    param = "ind="+pageIndex+"&chap=2"+"&rand="+(randomp?1:0);
+    if(qind!==undefined && ans!==undefined)
+    {
+    	param = param + "&q=" + qind + "&ans=" + ans;
+    }
+    else
+    {
+    	date = new Date();
+    	param = param + "&ts=" + date.getTime();
+    }
+    xmlhttp.send(param);
 }
 function EndPractice()
 {

@@ -21,6 +21,11 @@ h1
 	margin: 0;
 	padding: 8px 4px;
 }
+s
+{
+	color: rgb(255, 145, 145);
+	text-decoration: line-through;
+}
 img.txt
 {
 	display: inline-block;
@@ -306,7 +311,50 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	color: #FFF;
 	text-align: center;
 }
-
+.p-vocblock
+{
+	display: inline-block;
+	position: relative;
+	width: 160px;
+	height: 64px;
+	border: 3px solid rgb(101, 182, 72);
+	border-radius: 10px;
+	padding: 0;
+	margin: 3px;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+}
+.p-vocblock.playing
+{
+	border: 3px solid rgb(255, 145, 145) !important;
+}
+.p-vocblock .vbcontent
+{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.p-vocblock h3, .p-vocblock p
+{
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+.p-selected
+{
+	background-color: rgb(128, 206, 100);
+}
+#p-input
+{
+	font-size: 18pt;
+	padding: 10px;
+	border-radius: 12px;
+	width: 80%;
+	max-width: 450px;
+	text-align: center;
+}
 #content
 {
 	height: 100%;
@@ -448,4 +496,17 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 {
 	cursor: pointer;
 	display: inline-block;
+}
+.soundicon
+{
+	background-image: url(Doo/Icon/NotPlaying.png);
+	width: 1em;
+	height: 1em;
+	content: "";
+	background-size:contain;
+	margin: 3px;
+}
+.playing .soundicon
+{
+	background-image: url(Doo/Icon/Playing.png);
 }
