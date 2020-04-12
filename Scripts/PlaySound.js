@@ -1,11 +1,44 @@
+var autoPlay = false;
+var queuedStopAutoplay = false;
+var autoPlayTimeoutID;
+function toggleAutoplay()
+{
+    autoPlay = !autoPlay;
+    if(autoPlay)
+    {
+        document.getElementById('autoplaybtn').classList.add('enabled');
+        document.getElementById('autoplaybtn').title = "自動播放下段聲音（已開啟）";
+    }
+    else
+    {
+        document.getElementById('autoplaybtn').classList.remove('enabled');
+        document.getElementById('autoplaybtn').title = "自動播放下段聲音（目前關閉）";
+    }
+}
 var SoundObj = {
     audio : new Audio(),
-    endFunc : function()
+    endFunc : function(canAutoplay)
     {
         if(!!this.bindEle)
         {
             this.bindEle.classList.remove("playing");
+            if(canAutoplay && autoPlay && this.next != null)
+            {
+                if(queuedStopAutoplay) queuedStopAutoplay = false;
+                else
+                {
+                    autoPlayTimeoutID = window.setTimeout(( () => {PlayOrStopSound(this.next, true);} ), 200);
+                    if(zenscroll)
+                    {
+                        if(isElementFullyInViewport && !isElementFullyInViewport(this.next))
+                        {
+                            zenscroll.center(this.next);
+                        }
+                    }
+                }
+            }
         }
+        
     },
     bindEle : null,
     isPlaying : function () {
@@ -18,22 +51,43 @@ var SoundObj = {
             && !this.audio.paused
             && !this.audio.ended
             && this.audio.readyState > 2;
-    }
+    },
+    next : null
 };
-SoundObj.audio.onended = function(){SoundObj.endFunc();};
+SoundObj.audio.onended = function(){SoundObj.endFunc(true);};
 
-function PlayOrStopSound(ele)
+function StopCurSound()
 {
+    window.clearTimeout(autoPlayTimeoutID);
+    if(SoundObj.isPlaying())
+    {
+        SoundObj.audio.pause();
+        SoundObj.endFunc(false);
+    }
+}
+
+function PlayOrStopSound(ele, chkAutoplay)
+{
+    window.clearTimeout(autoPlayTimeoutID);
     if(SoundObj.bindEle === ele && SoundObj.isPlaying())
     {
         SoundObj.audio.pause();
-        SoundObj.endFunc();
+        SoundObj.endFunc(false);
     }
     else
     {
         if(ele.hasAttribute('data-surl'))
         {
-            SoundObj.endFunc();
+            SoundObj.endFunc(false);
+            queuedStopAutoplay = SoundObj.isPlaying();
+            if(chkAutoplay !== undefined && chkAutoplay)
+            {
+                SoundObj.next = SoundTxtMap.get(ele);
+            }
+            else
+            {
+                SoundObj.next = null;
+            }
             ele.classList.add("playing");
             SoundObj.audio.src = "Sviaym/"+ele.getAttribute('data-surl');
             SoundObj.audio.load();
@@ -46,16 +100,18 @@ function PlayOrStopSound(ele)
         }
     }
 }
-
+var SoundTxtMap = new Map();
 window.addEventListener('load',
     function(e)
     {
         var SoundTxts = document.getElementsByClassName('soundtxt');
         for(var i = 0; i < SoundTxts.length; i++)
         {
+            if(i+1<SoundTxts.length)
+                SoundTxtMap.set(SoundTxts[i], SoundTxts[i+1]);
             SoundTxts[i].onclick = function()
             {
-                PlayOrStopSound(this);
+                PlayOrStopSound(this, true);
             }
         }
     }

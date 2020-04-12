@@ -93,6 +93,7 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 {
 	border: 2px solid black;
 	width: 100px;
+	min-height: 2.5em;
 	margin: -1px;
 	padding: 5px;
 	display: inline-block;
@@ -208,6 +209,36 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 {
 	visibility: visible;
 }
+#autoplaybtn
+{
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 5px 15px 5px 15px;
+	border-radius: 0 0 0 24px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+	background-color: rgb(101, 182, 72);
+}
+#autoplaybtn:hover
+{
+	background-color: rgb(128, 206, 100);
+	cursor: pointer;
+}
+#autoplaybtn::before
+{	
+	content:"";
+	display: block;
+	width: 35px;
+	height: 39px;
+	background-image: url(Doo/Icon/NotAutoplay.png);
+	background-size: 100%;
+}
+#autoplaybtn.enabled::before
+{
+	background-image: url(Doo/Icon/Autoplay.png) !important;
+}
+
 .practicebtn
 {
 	display: inline-block;
@@ -222,6 +253,32 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	transition-duration: 0.2s;
 }
 .practicebtn:hover
+{
+	background-color: rgb(128, 206, 100);
+	transform: translateY(-5px);
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+.confirmbtn
+{
+	display: inline-block;
+	padding: 10px 32px;
+	margin: 10px;
+	min-width: 40%;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	background-color: rgb(180,180,180);
+	transition-duration: 0.2s;
+}
+.confirmbtn.enabled
+{
+	background-color: rgb(101, 182, 72);
+	transform: translateY(-2px);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.confirmbtn.enabled:hover
 {
 	background-color: rgb(128, 206, 100);
 	transform: translateY(-5px);

@@ -13,6 +13,21 @@ function isElementInViewport (el) {
     }
     return true;
 }
+function isElementFullyInViewport (el) {
+    var inset = 20;
+    var rect = el.getBoundingClientRect();
+    wh = (window.innerHeight || document.documentElement.clientHeight);
+    ww = (window.innerWidth || document.documentElement.clientWidth);
+    if(rect.left+inset > ww || rect.right-inset < 0)
+    {
+        return false;
+    }
+    if(rect.top-inset > 0 && rect.bottom+inset < wh)
+    {
+        return true;
+    }
+    return false;
+}
 function onVisibilityChange(el, isVisible) {
     var navEle = document.getElementById("nav-"+el.id);
     
@@ -36,15 +51,25 @@ var chkElements = [];
 {
     chkElements.push({ele:el, vis:false});
 });
+
 var handler = function()
 {
+    let found = false;
     chkElements.forEach(chkEl => {
-        var visible = isElementInViewport(chkEl.ele);
-        
-        if(visible != chkEl.vis)
+        if(!found)
         {
-            chkEl.vis = visible;
-            onVisibilityChange(chkEl.ele, chkEl.vis)
+            let visible = isElementInViewport(chkEl.ele);
+            if(visible != chkEl.vis)
+            {
+                chkEl.vis = visible;
+                onVisibilityChange(chkEl.ele, chkEl.vis);
+            }
+            if(visible) found = true;
+        }
+        else if(chkEl.vis == true)
+        {
+            chkEl.vis = false;
+            onVisibilityChange(chkEl.ele, chkEl.vis);
         }
     });
    // console.log("check once for "+chkElements.length+" elements");
