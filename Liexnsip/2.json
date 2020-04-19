@@ -46,6 +46,7 @@
         "soundpostfix":".mp3",
         "voc":[
             {"word":"chvihun","hint":"陌生"},
+            {"word":"!cvikui","hint":"錢櫃"},
             {"word":"dve"},
             {"word":"dvi"},
             {"word":"gve"},
@@ -53,14 +54,17 @@
             {"word":"hva","hint":"跨"},
             {"word":"hvi"},
             {"word":"i'vi","hint":"醫院"},
-            {"word":"pve"},
+            {"word":"kvoapve"},
+            {"word":"lauphvi"},
+            {"word":"phva","hint":"時髦"},
             {"word":"pvi"},
+            {"word":"svaviu","hint":"衫樣"},
             {"word":"svi"},
             {"word":"svilo"},
             {"word":"tvide"},
             {"word":"va"},
             {"word":"vi"},
-            {"word":"zhamgi-vi","hint":"參議院"},
+            {"word":"viade"},
             {"word":"zhogvi","hint":"粗硬"}
         ]
     },

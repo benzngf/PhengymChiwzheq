@@ -55,7 +55,7 @@ var SoundObj = {
     next : null
 };
 SoundObj.audio.onended = function(){SoundObj.endFunc(true);};
-
+SoundObj.audio.onerror = function(){SoundObj.endFunc(true);};
 function StopCurSound()
 {
     window.clearTimeout(autoPlayTimeoutID);

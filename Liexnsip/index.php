@@ -2,9 +2,10 @@
 //header
 $has_data = false;
 $data = array();
-if(isset($_POST['chap']) && $_POST['ind'])
+if(isset($_POST['ind']))
 {
-    $str = file_get_contents($_POST['chap'].'.json');
+    //get and parse JSON
+    $str = file_get_contents(''.intval($_POST['ind']).'.json');
     if($str !== false)
     {
         try
@@ -17,10 +18,7 @@ if(isset($_POST['chap']) && $_POST['ind'])
 
         }
     }
-}
-if(isset($_POST['ind']))
-{
-    //get and parse JSON
+    //title
     echo '<div class="p-topbar"><h3>[練習'.$_POST['ind'].']</h3>';
     if($has_data)
     {
@@ -42,7 +40,7 @@ else
         echo '<p style="margin-top:0; text-indent:0;">*練習需具有聲音播放裝置，請確認連接耳機或喇叭</p>';
         echo '<div class="practicebtn" onclick="RequestPractice('.$_POST['ind'].',\'read\');"><h3>讀字練習</h3></div>';
         echo '<br><div class="practicebtn" onclick="RequestPractice('.$_POST['ind'].',\'spell\');"><h3>聽寫（拼字）練習</h3></div>';
-        echo '<br><div class="practicebtn" onclick="RequestPractice('.$_POST['ind'].',\'random\');"><h3>綜合練習</h3></div>';
+        echo '<br><div class="practicebtn" onclick="RequestPractice('.$_POST['ind'].',[\'read\',\'spell\']);"><h3>綜合練習</h3></div>';
         
         echo '<h2>字庫</h2>';
         $arr_size = count($data->{$_POST['ind']}->{'voc'});

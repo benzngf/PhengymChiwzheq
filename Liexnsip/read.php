@@ -2,9 +2,10 @@
 //header
 $has_data = false;
 $data = array();
-if(isset($_POST['chap']) && $_POST['ind'])
+if(isset($_POST['ind']))
 {
-    $str = file_get_contents($_POST['chap'].'.json');
+    //get and parse JSON
+    $str = file_get_contents(''.intval($_POST['ind']).'.json');
     if($str !== false)
     {
         try
@@ -17,10 +18,6 @@ if(isset($_POST['chap']) && $_POST['ind'])
 
         }
     }
-}
-if(isset($_POST['ind']))
-{
-    //get and parse JSON
     echo '<div class="p-topbar"><h3>[讀字練習 '.$_POST['ind'].']</h3>';
     if($has_data)
     {
@@ -60,11 +57,6 @@ else
 
     if($has_data)
     {
-        $qtype = "'read'";
-        if(isset($_POST['rand']) && $_POST['rand'] == 1)
-        {
-            $qtype = "'random'";
-        }
         if(isset($_POST['q']) && isset($_POST['ans']))
         {
             $ele = ($data->{$_POST['ind']}->{'voc'})[$_POST['q']];
@@ -75,7 +67,7 @@ else
             	echo '<div class="svg-box"><svg class="circular green-stroke"><circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10"/></svg><svg class="checkmark green-stroke"><g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)"><path class="checkmark__check" fill="none" d="M616.306,283.025L634.087,300.805L673.361,261.53"/></g></svg></div>';
                 echo '<h2>答對了</h2>';
                 echo '<audio autoplay><source src="Sviaym/Right.mp3" type="audio/mpeg"></audio>';
-                echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].','.$qtype.');"><h3>下一題</h3></div>';
+                echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
             }
             else
             {
@@ -101,7 +93,7 @@ else
                 echo '</div>';
                 echo '<div class="soundicon" style="position:absolute;right:0;bottom:0;"></div>';
                 echo '</div>';
-                echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].','.$qtype.');"><h3>下一題</h3></div>';
+                echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
             }
         }
         else
@@ -126,7 +118,7 @@ else
                 addSelBtn($selEle,$selIndex,$data,$i+1);
             }
            
-            echo '<br><div id="p-confirm" class="confirmbtn" onclick="if(curselected){RequestPractice('.$_POST['ind'].',\'current\','.$randomIndex.',curselected.getAttribute(\'data-surl\'));curselected=null;}"><h3>確定</h3></div>';
+            echo '<br><div id="p-confirm" class="confirmbtn" onclick="if(curselected){RequestPractice('.$_POST['ind'].',\'read\','.$randomIndex.',curselected.getAttribute(\'data-surl\'));curselected=null;}"><h3>確定</h3></div>';
         }
     }
     else
