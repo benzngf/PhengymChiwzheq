@@ -1,4 +1,5 @@
 <?php
+require('common.php');
 //header
 $has_data = false;
 $data = array();
@@ -41,14 +42,7 @@ else
         this.classList.add(\'p-selected\');
         document.getElementById(\'p-confirm\').classList.add(\'enabled\');"
         style="width:120px;height:120px;" ';
-        if(isset($elem->{'sound'}))
-        {
-            echo 'data-surl="'.$elem->{'sound'}.'">';
-        }
-        else
-        {
-            echo 'data-surl="'.$obj->{$_POST['ind']}->{'soundprefix'}.$elemIndex.$obj->{$_POST['ind']}->{'soundpostfix'}.'">';
-        }
+        echo 'data-surl="'.GetDataSurl($obj, $elemIndex).'">';
         echo '<div class="vbcontent">';
         echo '<div class="soundicon" style="width:80px;height:80px;display:inline-block;"></div>';
         echo '<p>'.$displayTxt.'</p>';
@@ -57,10 +51,11 @@ else
 
     if($has_data)
     {
+        $part = $data->{$_POST['ind']};
         if(isset($_POST['q']) && isset($_POST['ans']))
         {
             $ele = ($data->{$_POST['ind']}->{'voc'})[$_POST['q']];
-            $qword = isset($ele->{'sound'})? $ele->{'sound'}:$data->{$_POST['ind']}->{'soundprefix'}.$_POST['q'].$data->{$_POST['ind']}->{'soundpostfix'};
+            $qword = isset($ele->{'sound'})? $ele->{'sound'} : ($part->{'soundprefix'}.($_POST['q']+(isset($part->{'soundstartind'})?$part->{'soundstartind'}:0)).$part->{'soundpostfix'});
             $aword = $_POST['ans'];
             if($qword == $aword)
             {
@@ -68,6 +63,7 @@ else
                 echo '<h2>答對了</h2>';
                 echo '<audio autoplay><source src="Sviaym/Right.mp3" type="audio/mpeg"></audio>';
                 echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
+                echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
             }
             else
             {
@@ -75,15 +71,15 @@ else
                 echo '<h2>答錯了</h2>';
                 echo '<audio autoplay><source src="Sviaym/Wrong.mp3" type="audio/mpeg"></audio>';
                 $ele = ($data->{$_POST['ind']}->{'voc'})[$_POST['q']];
-                echo '<div class="p-vocblock" onclick="PlayOrStopSound(this)" ';
-                if(isset($ele->{'sound'}))
+                if(strlen($ele->{'word'})>12)
                 {
-                    echo 'data-surl="'.$ele->{'sound'}.'">';
+                    echo '<div class="p-vocblock" style="width: 220px;"onclick="PlayOrStopSound(this)" ';
                 }
                 else
                 {
-                    echo 'data-surl="'.$data->{$_POST['ind']}->{'soundprefix'}.$_POST['q'].$data->{$_POST['ind']}->{'soundpostfix'}.'">';
+                    echo '<div class="p-vocblock" onclick="PlayOrStopSound(this)" ';
                 }
+                echo 'data-surl="'.GetDataSurl($data, $_POST['q']).'">';
                 echo '<div class="vbcontent">';
                 echo '<h3>'.$ele->{'word'}.'</h3>';
                 if(isset($ele->{'hint'}))
@@ -94,6 +90,7 @@ else
                 echo '<div class="soundicon" style="position:absolute;right:0;bottom:0;"></div>';
                 echo '</div>';
                 echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
+                echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
             }
         }
         else
@@ -119,6 +116,7 @@ else
             }
            
             echo '<br><div id="p-confirm" class="confirmbtn" onclick="if(curselected){RequestPractice('.$_POST['ind'].',\'read\','.$randomIndex.',curselected.getAttribute(\'data-surl\'));curselected=null;}"><h3>確定</h3></div>';
+            echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
         }
     }
     else

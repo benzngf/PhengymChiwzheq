@@ -1,0 +1,83 @@
+{
+    "4.1":
+    {
+        "title":"促音讀文練習",
+        "customscript":"4.1.php"
+    },
+    "4.2":
+    {
+        "title":"台語七聲調綜合複習",
+        "customscript":"4.2.php",
+        "soundprefix":"LS4/ls4.2_",
+        "soundpostfix":".mp3",
+        "noshow":true,
+        "voc":[
+            {"word":"ka","hint":"咬"},
+            {"word":"kaf","hint":"家"},
+            {"word":"kaa","hint":"把我"},
+            {"word":"kax","hint":"教"},
+            {"word":"kar","hint":"絞"},
+            {"word":"kag","hint":"角"},
+            {"word":"kak","hint":"#掉"},
+            {"word":"si","hint":"是"},
+            {"word":"sy","hint":"詩"},
+            {"word":"sii","hint":"時"},
+            {"word":"six","hint":"四"},
+            {"word":"sie","hint":"死"},
+            {"word":"siq","hint":"#閃爍"},
+            {"word":"sih","hint":"蝕"},
+            {"word":"lu","hint":"鋁"},
+            {"word":"lw","hint":"推"},
+            {"word":"luu","hint":"驢"},
+            {"word":"lux","hint":"擦"},
+            {"word":"luo","hint":"女"},
+            {"word":"lud","hint":"脫落"},
+            {"word":"lut","hint":"律"},
+            {"word":"pe","hint":"父"},
+            {"word":"pef","hint":"#扒食"},
+            {"word":"pee","hint":"爬"},
+            {"word":"pex","hint":"敝"},
+            {"word":"pea","hint":"把"},
+            {"word":"peq","hint":"剝"},
+            {"word":"peh","hint":"白"},
+            {"word":"ko","hint":"苟"},
+            {"word":"kof","hint":"姑"},
+            {"word":"koo","hint":"糊"},
+            {"word":"kox","hint":"顧"},
+            {"word":"kor","hint":"鼓"},
+            {"word":"kog","hint":"國"},
+            {"word":"kok","hint":"咯，硞"},
+            {"word":"doi","hint":"道"},
+            {"word":"doy","hint":"刀"},
+            {"word":"dooi","hint":"逃"},
+            {"word":"doix","hint":"倒"},
+            {"word":"doir","hint":"島"},
+            {"word":"doiq","hint":"桌"},
+            {"word":"doih","hint":"燃"},
+            {"word":"ham","hint":"陷"},
+            {"word":"hafm","hint":"#眼腫"},
+            {"word":"haam","hint":"函"},
+            {"word":"haxm","hint":"#離譜"},
+            {"word":"harm","hint":"打"},
+            {"word":"haq","hint":"#燻熱氣"},
+            {"word":"hah","hint":"合"}
+        ]
+    },
+    "4.3":
+    {
+        "title":"含輕聲文句的朗讀",
+        "customscript":"4.3.php",
+        "soundprefix":"LS4/ls4.3_",
+        "soundpostfix":".mp3",
+        "noshow":true,
+        "voc":[
+            {"word":"Bao~sie ax!","hint":"賺死了"},
+            {"word":"Dviux~sie ax!","hint":"脹死了"},
+            {"word":"Jidtaau zhud~laai lax.","hint":"太陽出來啦"},
+            {"word":"Y tauzao~zhutlaai (zhud laai).","hint":"他偷跑出來"},
+            {"word":"Chiwkyn booi~qix lax.","hint":"手巾不見啦"},
+            {"word":"Qix ho chiaf kauq~dioih.","hint":"去被車碾到"},
+            {"word":"Sngx~qylaai, ykefng kuex go dafng lox!","hint":"算起來，已經過五年了。"}
+        ]
+    }
+}

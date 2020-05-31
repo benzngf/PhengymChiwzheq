@@ -68,7 +68,16 @@ h3
 p
 {
 	text-indent: 2em;
-	line-height: 1.5em;
+	line-height: 1.6em;
+}
+ol,ul
+{
+	line-height: 1.6em;
+}
+li
+{
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 table
 {
@@ -85,6 +94,10 @@ table
 td,th
 {
 	padding: 5px 18px;
+}
+th
+{
+	white-space: nowrap;
 }
 tr:nth-child(odd) {background: rgb(220,220,220)}
 tr:nth-child(even) {background: rgb(245,245,245)}
@@ -276,9 +289,8 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 .confirmbtn
 {
 	display: inline-block;
-	padding: 10px 32px;
-	margin: 10px;
-	min-width: 40%;
+	padding: 12px 54px;
+	margin: 12px;
 	text-align: center;
 	color: white;
 	border-radius: 10px;
@@ -582,4 +594,18 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 .playing .soundicon
 {
 	background-image: url(Doo/Icon/Playing.png);
+}
+.backbtn
+{
+	font-size: 12pt;
+	color: rgb(110, 110, 110);
+	border-bottom: 1pt solid;
+	border-bottom-color: rgba(110, 110, 110, 0);
+	cursor: pointer;
+	display: inline-block;
+}
+.backbtn:hover
+{
+	border-bottom: 1pt solid;
+	border-bottom-color: rgb(110, 110, 110);
 }

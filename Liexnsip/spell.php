@@ -1,4 +1,5 @@
 <?php
+require('common.php');
 //header
 $has_data = false;
 $data = array();
@@ -49,6 +50,7 @@ else
                 echo '<h2>答對了</h2>';
                 echo '<audio autoplay><source src="Sviaym/Right.mp3" type="audio/mpeg"></audio>';
                 echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
+                echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
             }
             else
             {
@@ -57,6 +59,7 @@ else
                 echo '<h3><s>'.$_POST['ans'].'</s> → '.$ele->{'word'}.'</h3>';
                 echo '<audio autoplay><source src="Sviaym/Wrong.mp3" type="audio/mpeg"></audio>';
                 echo '<br><div id="p-confirm" class="confirmbtn enabled" onclick="RequestPractice('.$_POST['ind'].',\'current\');"><h3>下一題</h3></div>';
+                echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
             }
         }
         else
@@ -65,15 +68,7 @@ else
             $ele = ($data->{$_POST['ind']}->{'voc'})[$randomIndex];
             
             echo '<div id="questionsound" class="p-vocblock" onclick="PlayOrStopSound(this)" style="width:120px;height:120px;" ';
-            if(isset($ele->{'sound'}))
-            {
-                echo 'data-surl="'.$ele->{'sound'}.'">';
-            }
-            else
-            {
-                echo 'data-surl="'.$data->{$_POST['ind']}->{'soundprefix'}.$randomIndex.$data->{$_POST['ind']}->{'soundpostfix'}.'">';
-            }
-            
+            echo 'data-surl="'.GetDataSurl($data, $randomIndex).'">';
             echo '<div class="vbcontent">';
             
             echo '<div class="soundicon" style="width:80px;height:80px;display:inline-block;"></div>';
@@ -86,6 +81,7 @@ else
             echo '<input type="text" id="p-input" autocomplete="off" placeholder="Daibuun..." maxlength="'.(strlen($ele->{'word'})+5).'" 
             oninput="if(this.value.length>0) document.getElementById(\'p-confirm\').classList.add(\'enabled\'); else document.getElementById(\'p-confirm\').classList.remove(\'enabled\');"></input>';
             echo '<br><div id="p-confirm" class="confirmbtn" onclick="if(document.getElementById(\'p-input\').value.length>0) RequestPractice('.$_POST['ind'].',\'spell\','.$randomIndex.',document.getElementById(\'p-input\').value);"><h3>確定</h3></div>';
+            echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
         }
     }
     else
