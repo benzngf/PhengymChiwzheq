@@ -66,7 +66,12 @@ else
                 }
                 echo 'data-surl="'.GetDataSurl($data, $i).'">';
                 echo '<div class="vbcontent">';
-                echo '<h3>'.$ele->{'word'}.'</h3>';
+                echo '<h3>'.$ele->{'word'};
+                if(isset($ele->{'alias'}))
+                {
+                    echo ' (<font class="soundtxt" onclick="PlayOrStopSound(this); event.stopPropagation();" data-surl="'.GetDataSurl($data, $i,'_1').'">'.$ele->{'alias'}.'</font>)';
+                }
+                echo '</h3>';
                 if(isset($ele->{'hint'}))
                 {
                     echo '<p>'.$ele->{'hint'}.'</p>';

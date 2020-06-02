@@ -175,7 +175,7 @@
             {"word":"iupng"},
             {"word":"launoa","hint":"流涎"},
             {"word":"kafndafn","hint":"簡單"},
-            {"word":"afnny(afnnef)","hint":"這樣"},
+            {"word":"afnny","alias":"afnnef","hint":"這樣"},
             {"word":"hoytioy","hint":"好賺"},
             {"word":"sysym"},
             {"word":"wnkw"},
@@ -197,12 +197,45 @@
     "3.5":
     {
         "title":"複母音的基調音和副四聲的拼字",
-        "customscript":"3.5.php"
+        "customscript":"3.5.php",
+        "soundprefix":"LS3/ls3.5_",
+        "soundpostfix":".mp3",
+        "noshow":true,
+        "voc":[
+            {"word":"ai"},{"word":"ay"},{"word":"aai"},{"word":"aix"},{"word":"ae"},
+            {"word":"au"},{"word":"aw"},{"word":"aau"},{"word":"aux"},{"word":"ao"},
+            {"word":"ia"},{"word":"iaf"},{"word":"iaa"},{"word":"iax"},{"word":"iar"},
+            {"word":"iau"},{"word":"iaw"},{"word":"iaau"},{"word":"iaux"},{"word":"iao"},
+            {"word":"ioi"},{"word":"ioy"},{"word":"iooi"},{"word":"ioix"},{"word":"ioir"},
+            {"word":"iu"},{"word":"iw"},{"word":"iuu"},{"word":"iux"},{"word":"iuo"},
+            {"word":"oa"},{"word":"oaf"},{"word":"oaa"},{"word":"oax"},{"word":"oar"},
+            {"word":"oai"},{"word":"oay"},{"word":"oaai"},{"word":"oaix"},{"word":"oae"},
+            {"word":"oe"},{"word":"oef"},{"word":"oee"},{"word":"oex"},{"word":"oea"},
+            {"word":"ui"},{"word":"uy"},{"word":"uii"},{"word":"uix"},{"word":"uie"}
+        ],
+        "tmpremoved":[{"word":"ue"},{"word":"uef"},{"word":"uee"},{"word":"uex"},{"word":"uea"}]
     },
     "3.6":
     {
         "title":"含後鼻音之母音的基調音和副四聲的拼字",
-        "customscript":"3.6.php"
+        "customscript":"3.5.php",
+        "soundprefix":"LS3/ls3.6_",
+        "soundpostfix":".mp3",
+        "noshow":true,
+        "voc":[
+            {"word":"an"},{"word":"afn"},{"word":"aan"},{"word":"axn"},{"word":"arn"},
+            {"word":"ang"},{"word":"afng"},{"word":"aang"},{"word":"axng"},{"word":"arng"},
+            {"word":"eng"},{"word":"efng"},{"word":"eeng"},{"word":"exng"},{"word":"erng"},
+            {"word":"iam"},{"word":"iafm"},{"word":"iaam"},{"word":"iaxm"},{"word":"iarm"},
+            {"word":"iang"},{"word":"iafng"},{"word":"iaang"},{"word":"iaxng"},{"word":"iarng"},
+            {"word":"ien"},{"word":"iefn"},{"word":"ieen"},{"word":"iexn"},{"word":"iern"},
+            {"word":"in"},{"word":"yn"},{"word":"iin"},{"word":"ixn"},{"word":"irn"},
+            {"word":"im"},{"word":"ym"},{"word":"iim"},{"word":"ixm"},{"word":"irm"},
+            {"word":"iong"},{"word":"iofng"},{"word":"ioong"},{"word":"ioxng"},{"word":"iorng"},
+            {"word":"oan"},{"word":"oafn"},{"word":"oaan"},{"word":"oaxn"},{"word":"oarn"},
+            {"word":"ong"},{"word":"ofng"},{"word":"oong"},{"word":"oxng"},{"word":"orng"},
+            {"word":"un"},{"word":"wn"},{"word":"uun"},{"word":"uxn"},{"word":"urn"}
+        ]
     },
     "3.7":
     {

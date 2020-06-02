@@ -7,7 +7,7 @@
 ?>
 <h2>例句</h2>
 <div style="width: 80%; max-width: 750px; text-align: left; margin-left: auto; margin-right: auto; font-size: 1.17em;"> 
-<div class="flowcell-tab" style="width: 100%;">Armsii diaarm'diaxm'diam, y ee simzeeng si dviaar'dviax'dvia.</div>
-<div class="flowcell-tab" style="width: 100%;">Taau tix ho knggr'kng'kngf, qix ka y dien ho kiirm'kim'kym.</div>
-<div class="flowcell-tab" style="width: 100%;">Png zuo kaq liaarm'liam'liaam, zhaix tng ho siooir'sioi'sioy.</div>
+<div class="flowcell-tab" style="width: 100%;"><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_0.mp3">Armsii diaarm'diaxm'diam</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_1.mp3">y ee simzeeng si dviaar'dviax'dvia</font>.</div>
+<div class="flowcell-tab" style="width: 100%;"><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_2.mp3">Taau tix ho knggr'kng'kngf</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_3.mp3">qix ka y dien ho kiirm'kim'kym</font>.</div>
+<div class="flowcell-tab" style="width: 100%;"><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_4.mp3">Png zuo kaq liaarm'liam'liaam</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS3/ls3.7.0_5.mp3">zhaix tng ho siooir'sioi'sioy</font>.</div>
 </div>

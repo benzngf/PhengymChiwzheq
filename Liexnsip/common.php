@@ -1,5 +1,5 @@
 <?php
-function GetDataSurl(&$data, $index)
+function GetDataSurl(&$data, $index, $append='')
 {
     $part = $data->{$_POST['ind']};
     if(isset($part->{'voc'}[$index]->{'sound'}))
@@ -8,11 +8,11 @@ function GetDataSurl(&$data, $index)
     }
     if(isset($part->{'soundstartind'}))
     {
-        return $part->{'soundprefix'}.($index+$part->{'soundstartind'}).$part->{'soundpostfix'};
+        return $part->{'soundprefix'}.($index+$part->{'soundstartind'}).$append.$part->{'soundpostfix'};
     }
     else
     {
-        return $part->{'soundprefix'}.$index.$part->{'soundpostfix'};
+        return $part->{'soundprefix'}.$index.$append.$part->{'soundpostfix'};
     }
 }
 ?>

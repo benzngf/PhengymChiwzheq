@@ -35,7 +35,7 @@ else
 <div style="position:relative; width: 100%; height: calc(100% - 128px);">
 <div style="position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%); text-align: center; width: 100%;">
 <?php
-    if($has_data)
+    if($has_data && isset($data->{$_POST['ind']}->{'voc'}))
     {
         if(isset($_POST['q']) && isset($_POST['ans']))
         {

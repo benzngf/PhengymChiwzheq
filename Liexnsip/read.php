@@ -49,7 +49,7 @@ else
         echo '</div></div>';
 	}
 
-    if($has_data)
+    if($has_data && isset($data->{$_POST['ind']}->{'voc'}))
     {
         $part = $data->{$_POST['ind']};
         if(isset($_POST['q']) && isset($_POST['ans']))
