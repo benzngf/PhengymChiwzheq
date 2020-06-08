@@ -93,6 +93,7 @@ function PlayOrStopSound(ele, chkAutoplay)
             SoundObj.audio.load();
             SoundObj.bindEle = ele;
             SoundObj.audio.play();
+            //console.log(ele.getAttribute('data-surl'));
         }
         else
         {

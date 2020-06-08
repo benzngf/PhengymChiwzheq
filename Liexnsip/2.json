@@ -46,7 +46,7 @@
         "soundpostfix":".mp3",
         "voc":[
             {"word":"chvihun","hint":"陌生"},
-            {"word":"!cvikui","hint":"錢櫃"},
+            {"word":"cvikui","hint":"錢櫃"},
             {"word":"dve"},
             {"word":"dvi"},
             {"word":"gve"},
@@ -64,19 +64,18 @@
             {"word":"tvide"},
             {"word":"va"},
             {"word":"vi"},
-            {"word":"viade"},
-            {"word":"zhogvi","hint":"粗硬"}
+            {"word":"viade"}
         ]
     },
     "2.3":
     {
-        "title":"含複母音及後鼻音拼詞",
+        "title":"含複母音及單母音拼詞",
         "soundprefix":"LS2/ls2.3_",
         "soundpostfix":".mp3",
         "voc":[
             {"word":"boviu"},
             {"word":"chialo"},
-            {"word":"dionggi"},
+            {"word":"aidoi","hint":"哀悼"},
             {"word":"dngmia"},
             {"word":"ioichi","hint":"育飼"},
             {"word":"iu'u","hint":"猶豫"},
@@ -96,7 +95,8 @@
             {"word":"taulo","hint":"頭路"},
             {"word":"zai'ge"},
             {"word":"zhakui"},
-            {"word":"zngsia"}
+            {"word":"zngsia"},
+            {"word":"boihau","hint":"無效"}
         ]
     },
     "2.4":
@@ -110,7 +110,7 @@
             {"word":"hoeviu"},
             {"word":"iutai"},
             {"word":"kauvoa"},
-            {"word":"kiaugvo","hint":"驕傲"},
+            {"word":"svoabioi","hint":"山廟"},
             {"word":"kuioe"},
             {"word":"lau'oe"},
             {"word":"paigoa"},
@@ -122,7 +122,9 @@
             {"word":"viadui","hint":"營隊"},
             {"word":"viudau","hint":"洋豆"},
             {"word":"zaihai"},
-            {"word":"zailiau"}
+            {"word":"zailiau"},
+            {"word":"chia'ui","hint":"車位"},
+            {"word":"qviudiau","hint":"腔調"}
         ]
     },
     "2.5":
@@ -165,7 +167,8 @@
             {"word":"phenggi","hint":"評議"},
             {"word":"sienle"},
             {"word":"tiendoi"},
-            {"word":"zapan","hint":"查辦"}
+            {"word":"zapan","hint":"查辦"},
+            {"word":"zengsu","hint":"情緒"}
         ]
     },
     "2.6":
@@ -190,7 +193,10 @@
             {"word":"lienjim"},
             {"word":"lun'ham ","hint":"淪陷"},
             {"word":"sunzeng","hint":"純淨"},
-            {"word":"zenggoan"}
+            {"word":"zenggoan"},
+            {"word":"phengdeng","hint":"評定"},
+            {"word":"tengzam","hint":"停站"},
+            {"word":"qoanan","hint":"延展，寬限"}
         ]
     },
     "2.7":
