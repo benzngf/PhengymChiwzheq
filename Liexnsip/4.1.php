@@ -1,12 +1,17 @@
-<h3>a. 唇上促音</h3>
-<p>Tviqix hiphib, lefap lai ee koyciab siap'siab. Lapphvi ee korcib, taumngg sipsib, zoirsu kipkib, ma ka hob oaan lax.</p>
+<?php
+echo '<br><p style="margin-top:0; text-indent:0;">*練習需具有聲音播放裝置，請確認連接耳機或喇叭</p>';
+echo '<div class="practicebtn" onclick="RequestPractice('.$_POST['ind'].',\'fillblank\');"><h3>聽寫（拼字）練習</h3></div>';
+?>
+<h2>題目例句</h2>
+<h3><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_0.mp3">a. 唇上促音</font></h3>
+<p><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_1.mp3">Tviqix hiphib</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_2.mp3">lefap lai ee koyciab siap'siab</font>. <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_3.mp3">Lapphvi ee korcib</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_4.mp3">taumngg sipsib</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_5.mp3">zoirsu kipkib</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_6.mp3">ma ka hob oaan lax</font>.</p>
 <p>天氣悶悶的，禮盒內的果汁澀澀。塌鼻的固執，頭髮濕濕的，做事急急的，也把它吃完了。</p>
-<h3>b. 舌前促音</h3>
-<p>Bad u cit ee tuttaau ee zhat, tuttud, gaau tutzhee.  Cid ee zhat u chid ky pid, ka kad zoirhoea, siefn ad doi ad be dng. Utzud zhutqix, tatdoir zhad.</p>
+<h3><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_7.mp3">b. 舌前促音</font></h3>
+<p><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_8.mp3">Bad u cit ee tuttaau ee zhat</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_9.mp3">tuttud, gaau tutzhee</font>.  <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_10.mp3">Cid ee zhat u chid ky pid</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_11.mp3">ka kad zoirhoea</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_12.mp3">siefn ad doi ad be dng</font>. <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_13.mp3">Utzud zhutqix</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_14.mp3">tatdoir zhad</font>.</p>
 <p>曾有一個禿頭的賊，禿禿，又很會出錯。這個賊有七支筆，給綁在一起，怎麼也折不斷。鬱卒出氣，踢倒漆。</p>
-<h3>c. 喉頂促音</h3>
-<p>Y ee tauqag qokqog, zhuieqie pokpog, phvi-ar dokdog. Aix dog dogkag lioong ee kag, cyn zanqog, okdok, booi qoihak.</p>
+<h3><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_15.mp3">c. 喉頂促音</font></h3>
+<p><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_16.mp3">Y ee tauqag qokqog</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_17.mp3">zhuieqie pokpog</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_18.mp3">phvi-ar dokdog</font>. <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_19.mp3">Aix dog dogkag lioong ee kag</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_20.mp3">cyn zanqog</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_21.mp3">okdok</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_22.mp3">booi qoihak</font>.</p>
 <p>他的頭殼凸凸，牙齒暴出，鼻子突突的。要剁獨角龍的角，真殘酷，惡毒，不科學。</p>
-<h3>d. 開放促音</h3>
-<p>Joaqtvy sioiloih, loiqho loih soaq doi be joah. Y bueq ciaqsox, iawkoiq zaq baq laai kaq. U ciah koiq u liah.</p>
+<h3><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_23.mp3">d. 開放促音</font></h3>
+<p><font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_24.mp3">Joaqtvy sioiloih</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_25.mp3">loiqho loih soaq doi be joah</font>. <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_26.mp3">Y bueq ciaqsox</font>, <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_27.mp3">iawkoiq zaq baq laai kaq</font>. <font class="soundtxt" onclick="PlayOrStopSound(this)" data-surl="LS4/ls4.1_28.mp3">U ciah koiq u liah</font>.</p>
 <p>夏天燒熱，下雨下完就不熱。他要吃素，還又攜帶肉來搭配。有吃的又有拿的。</p>

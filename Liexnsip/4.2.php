@@ -32,7 +32,6 @@ function PrintVoc(&$data, $start, $end)
         }
     }
 }
-
 ?>
 <br>
 <h2>字庫</h2>
