@@ -405,12 +405,11 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 	display: inline-block;
 	position: relative;
 	width: 160px;
-	height: 64px;
+	min-height: 64px;
 	border: 3px solid rgb(101, 182, 72);
 	border-radius: 10px;
 	padding: 0;
 	margin: 3px;
-	vertical-align: middle;
 	text-align: center;
 	cursor: pointer;
 }
@@ -421,8 +420,9 @@ tr:nth-child(even) {background: rgb(245,245,245)}
 .p-vocblock .vbcontent
 {
 	position: absolute;
-	width: 100%;
+	display: block;
 	top: 50%;
+	width: 100%;
 	transform: translateY(-50%);
 }
 .p-vocblock h3, .p-vocblock p

@@ -68,13 +68,18 @@ else
             $randomVIndex = rand ( 0, intdiv(count(($data->{$_POST['ind']}->{'sentences'})[$randomSIndex]),2)-1)*2+1;
 
             $ele = (($data->{$_POST['ind']}->{'sentences'})[$randomSIndex])[$randomVIndex];
-            echo '<h2>請參考聲音及提示，於空格中輸入正確的台文字詞：</h2>';
+            echo '<h2>請參考聲音及提示，於下方輸入空格中正確的台文字詞：</h2>';
             echo '<p style="line-height: 2.5em; font-size: 16pt;">';
             for($i = 0; $i < count(($data->{$_POST['ind']}->{'sentences'})[$randomSIndex]); $i++)
             {
                 if($i == $randomVIndex)
                 {
-                    echo '<input type="text" id="p-input" class="small" autocomplete="off" placeholder="'.$ele->{'hint'}.'" maxlength="'.(strlen($ele->{'word'})+5).'"oninput="if(this.value.length>0) document.getElementById(\'p-confirm\').classList.add(\'enabled\'); else document.getElementById(\'p-confirm\').classList.remove(\'enabled\');"></input>';
+                    echo '<b>____';
+                    if(isset($ele->{'hint'}))
+                    {
+                        echo '('.$ele->{'hint'}.')';
+                    }
+                    echo '____</b>';
                 }
                 else{
                     $val = ($data->{$_POST['ind']}->{'sentences'})[$randomSIndex][$i];
@@ -89,6 +94,7 @@ else
                 } 
             }
             echo '</p>';
+            echo '<input type="text" id="p-input" autocomplete="off" placeholder="'.$ele->{'hint'}.'" maxlength="'.(strlen($ele->{'word'})+5).'"oninput="if(this.value.length>0) document.getElementById(\'p-confirm\').classList.add(\'enabled\'); else document.getElementById(\'p-confirm\').classList.remove(\'enabled\');"></input>';
             echo '<br><div id="p-confirm" class="confirmbtn" onclick="if(document.getElementById(\'p-input\').value.length>0) RequestPractice('.$_POST['ind'].',\'fillblank\',\''.$randomSIndex.'-'.$randomVIndex.'\',document.getElementById(\'p-input\').value);"><h3>確定</h3></div>';
             echo '<br><br><div class="backbtn" onclick="RequestPractice('.$_POST['ind'].',\'index\');">↺ 返回主頁</div>';
         }

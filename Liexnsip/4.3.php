@@ -1,18 +1,18 @@
 <?php
     if(isset($data->{$_POST['ind']}->{'voc'}))
         {
-            echo '<h2>題目列表</h2>';
+            echo '<h2>請試著朗讀以下例句：</h2>';
             $arr_size = count($data->{$_POST['ind']}->{'voc'});
             for($i = 0 ; $i < $arr_size ; $i++)
             {
                 $ele = ($data->{$_POST['ind']}->{'voc'})[$i];
                 if(strlen($ele->{'word'})>12)
                 {
-                    echo '<div class="p-vocblock" style="width: '.(strlen($ele->{'word'})*15).'px;"onclick="PlayOrStopSound(this)" ';
+                    echo '<div class="p-vocblock" style="height:90px; width: '.(strlen($ele->{'word'})*15).'px; max-width:80%;"onclick="PlayOrStopSound(this)" ';
                 }
                 else
                 {
-                    echo '<div class="p-vocblock" onclick="PlayOrStopSound(this)" ';
+                    echo '<div class="p-vocblock" style="height:90px;" onclick="PlayOrStopSound(this)" ';
                 }
                 echo 'data-surl="'.GetDataSurl($data, $i).'">';
                 echo '<div class="vbcontent">';
@@ -31,5 +31,4 @@
             }
         }
 ?>
-<br>
-<div class="practicebtn" onclick="RequestPractice('4.3','index');"><h3>開始練習</h3></div>
+
