@@ -6,7 +6,7 @@
         "soundprefix":"LS5/ls5.1_",
         "soundpostfix":".mp3",
         "noshow":true,
-        "soundvalid":[true,false],
+        "soundvalid":[true,true],
         "voc":[
             {"goandiau":"si","zoafndiau":"sixhuy","zhint":"是非","zq":"?huy","za":"six"},
             {"goandiau":"sy","zoafndiau":"sijiin","zhint":"詩人","zq":"?jiin","za":"si"},

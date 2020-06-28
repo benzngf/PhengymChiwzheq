@@ -51,8 +51,8 @@ var chkElements = [];
 {
     chkElements.push({ele:el, vis:false});
 });
-
-var handler = function()
+var checkCalled = 0;
+function checkVisibility()
 {
     let found = false;
     chkElements.forEach(chkEl => {
@@ -72,7 +72,31 @@ var handler = function()
             onVisibilityChange(chkEl.ele, chkEl.vis);
         }
     });
-   // console.log("check once for "+chkElements.length+" elements");
+}
+var handler = function()
+{
+    if(checkCalled == 0)
+    {
+        checkCalled++;
+        setTimeout(function(){
+            if(checkCalled == 1)
+            {
+                checkCalled = 0;
+                checkVisibility();
+            }
+            else
+            {
+                checkCalled = 0;
+                handler();
+            }
+        }
+        , 200);
+    }
+    else
+    {
+        checkCalled++;
+    }
+    
 }
 if (window.addEventListener) {
     addEventListener('DOMContentLoaded', handler, false);
