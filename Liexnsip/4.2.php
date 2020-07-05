@@ -54,4 +54,4 @@ function PrintVoc(&$data, $start, $end)
         <tr><td>7.</td><?php PrintVoc($data, 42, 48); ?></tr>
     </table>
 </div>
-<p>*kak #掉： qioih'kak 無用之物，hiet'kak 丟棄</p>
+<p>*<font class="soundtxt" data-surl="LS4/ls4.2a_0.mp3" onclick="PlayOrStopSound(this)">kak</font> #掉： <font class="soundtxt" data-surl="LS4/ls4.2a_1.mp3" onclick="PlayOrStopSound(this)">qioih'kak</font> 無用之物，<font class="soundtxt" data-surl="LS4/ls4.2a_2.mp3" onclick="PlayOrStopSound(this)">hiet'kak</font> 丟棄</p>

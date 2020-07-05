@@ -1,3 +1,4 @@
+<div style="width: 100%; height: calc(100% - 60px); overflow: auto; text-align: center;">
 <?php
 require('common.php');
 //header
@@ -33,7 +34,7 @@ else
 }
 ?>
 
-<div style="width: 100%; height: calc(100% - 128px); padding: 10px; overflow: auto; text-align: center;">
+<div style="width: 100%; padding: 10px;">
 <?php
     if($has_data)
     {
@@ -91,5 +92,5 @@ else
         echo '<h2>好像有什麼出錯了...</h2><h3>點擊下方結束練習以返回</h3>';
     }
 ?>
-
+</div>
 </div>
