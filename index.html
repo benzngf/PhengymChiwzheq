@@ -69,7 +69,6 @@
         <a href="#6.2" onclick="Reset();"><div id="nav-6.2" class="contentstag lv2"><h3>6.2 沒問題，你穩好勢！</h3></div></a>
         <a href="#6.3" onclick="Reset();"><div id="nav-6.3" class="contentstag lv2"><h3>6.3 從瀕臨死亡到花開燦爛</h3></div></a>
     </div>
-
 </div>
 <div id="content">
     <!--<p><font class="soundtxt" data-soundurl="Sviaym/2-0-1.mp3">2-0-1</font></p>-->
@@ -879,7 +878,6 @@
     </div>
 </div>
 <div title="自動播放下段聲音（目前關閉）" id="autoplaybtn" onclick="toggleAutoplay()">
-
 </div>
 <div id="practice"> 
     <div class="p-panel hide" id="practice-content">Inject stuff here</div>
@@ -921,7 +919,6 @@ function switchMobileMode()
         document.getElementById('navbarouter').classList.remove("mobile");
         document.getElementById('practice').classList.remove("mobile");
     }
-    
 }
 function toggleNavbar()
 {
@@ -999,7 +996,6 @@ function RequestPractice(pageIndex, ptype, qind, ans)
         param = param + "&ts=" + date.getTime();
         isAns = false;
     }
-
     if(ptype !== undefined)
     {
         if(Array.isArray(ptype))
@@ -1027,12 +1023,9 @@ function RequestPractice(pageIndex, ptype, qind, ans)
             if(!isAns) curptype = ptype;
         }
     }
-
-    
     document.getElementById('practice-loading').classList.remove("hide");
     xmlhttp.open("POST", reqUrl);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    
     xmlhttp.send(param);
 }
 function EndPractice()
@@ -1054,7 +1047,6 @@ document.onkeydown=function(event){
         if(document.getElementById('p-confirm')) document.getElementById('p-confirm').click();
     }
 }
-
 </script>
 <script src="Scripts/zenscroll-min.js"></script>
 <script src="Scripts/progress-checker.js"></script>
